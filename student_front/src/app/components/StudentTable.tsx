@@ -1,0 +1,51 @@
+
+//importaciones
+
+
+//interfaz del estudiante
+interface Student{
+    name:string,
+    email:string,
+    dateOfBirth: string
+}
+
+//Interfaz para el conjunto de estudiantes
+interface StudentTableProps{
+    students: Student[]
+}
+
+//Definir el componente de FC, crear un listado en la funcion map
+
+const StudentTable:React.FC<StudentTableProps>= ({students})=>{
+
+    console.log(students)
+    return(
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo Electronico</th>
+                    <th>Fecha de Nacimiento</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {
+                    students.map(
+                        (student,index)=>{
+                            return(
+                                <tr>
+                                    <td>{student.name}</td>
+                                    <td>{student.email}</td>
+                                    <td>{student.dateOfBirth}</td>
+                                </tr>
+                            )
+                        }
+                    )
+                }
+            </tbody>
+        </table>
+    )
+}
+
+export default StudentTable
