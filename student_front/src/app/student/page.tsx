@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import StudentTable from "../components/StudentTable";
+import PlusIcon from "../components/AddStudent";
 
 
 //DEfinir funcion que se ejecuta cuando hagan una peticion a esta ruta
@@ -37,9 +38,12 @@ export default function StudentPage(){
     //Llamar al componente StudentTable
 
     return(
-        <div>
-            <h1>Listado de Estudiantes</h1>
+        <div className="container mx-auto">
+            {/* <h1 className="p-6">Listado de Estudiantes</h1> */}
+            <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Listado de </span> Estudiantes.</h1>
             <StudentTable students={students} />
+            <p> . </p>
+            <PlusIcon></PlusIcon>
         </div>
     )
 

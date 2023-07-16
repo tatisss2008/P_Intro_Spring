@@ -20,12 +20,12 @@ const StudentTable:React.FC<StudentTableProps>= ({students})=>{
 
     console.log(students)
     return(
-        <table>
+        <table className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Correo Electronico</th>
-                    <th>Fecha de Nacimiento</th>
+                    <th scope="col" className="p-4">Nombre</th>
+                    <th scope="col" className="p-4">Correo Electronico</th>
+                    <th scope="col" className="p-4">Fecha de Nacimiento</th>
                 </tr>
 
             </thead>
@@ -34,7 +34,7 @@ const StudentTable:React.FC<StudentTableProps>= ({students})=>{
                     students.map(
                         (student,index)=>{
                             return(
-                                <tr>
+                                <tr >
                                     <td>{student.name}</td>
                                     <td>{student.email}</td>
                                     <td>{student.dateOfBirth}</td>
